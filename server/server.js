@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect("mongodb://mahaky520_db_user:Shiroivy@ac-9zr51wc-shard-00-00.vxqdcte.mongodb.net:27017,ac-9zr51wc-shard-00-01.vxqdcte.mongodb.net:27017,ac-9zr51wc-shard-00-02.vxqdcte.mongodb.net:27017/?ssl=true&replicaSet=atlas-ajdq0l-shard-0&authSource=admin&appName=Cluster0")
+mongoose.connect(process.env.MONGO_URI)
 .then(() => console.log("MongoDB connected"))
 .catch(err => console.log(err))
 
