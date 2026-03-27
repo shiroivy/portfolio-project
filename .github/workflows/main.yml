@@ -1,0 +1,19 @@
+name: Basic Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: List files
+      run: ls -la
+
+    - name: Success
+      run: echo "Pipeline working 🚀"
